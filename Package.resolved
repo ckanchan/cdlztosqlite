@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CDKSwiftOracc",
+        "repositoryURL": "https://github.com/ckanchan/CDKSwiftOracc",
+        "state": {
+          "branch": "master",
+          "revision": "28b698d363ba7845c2f66cac26ff871c43a5abfd",
+          "version": null
+        }
+      },
+      {
+        "package": "SQLite.swift",
+        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "210098546d59678f720e4ef67f8b562acfebbdb0",
+          "version": "0.11.5"
+        }
+      },
+      {
+        "package": "ZIPFoundation",
+        "repositoryURL": "https://github.com/weichsel/zipfoundation",
+        "state": {
+          "branch": null,
+          "revision": "b5c53bef2deb7b20659b03b1223f0942599e5c41",
+          "version": "0.9.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
