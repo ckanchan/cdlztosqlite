@@ -45,6 +45,10 @@ enum OraccSQLDB {
     static let notes = Expression<String?>("notes")
     static let credits = Expression<String?>("credits")
     
+    //Location data
+    static let pleiadesID = Expression<Int?>("pleiades_id")
+    static let pleiadesCoordinateX = Expression<Double?>("pleiades_coordinate_x")
+    static let pleiadesCoordinateY = Expression<Double?>("pleiades_coordinate_y")
     
     // A place to encode TextEditionStringContainer with NSCoding
     static let textStrings = Expression<Data>("Text")
@@ -79,6 +83,10 @@ enum OraccSQLDB {
                 t.column(OraccSQLDB.notes)
                 t.column(OraccSQLDB.credits)
                 
+                //Pleiades data
+                t.column(OraccSQLDB.pleiadesID)
+                t.column(OraccSQLDB.pleiadesCoordinateX)
+                t.column(OraccSQLDB.pleiadesCoordinateY)
                 
                 t.column(OraccSQLDB.textStrings)
             })

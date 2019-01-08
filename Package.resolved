@@ -5,9 +5,9 @@
         "package": "CDKSwiftOracc",
         "repositoryURL": "https://github.com/ckanchan/CDKSwiftOracc",
         "state": {
-          "branch": "master",
-          "revision": "28b698d363ba7845c2f66cac26ff871c43a5abfd",
-          "version": null
+          "branch": null,
+          "revision": "dd0a48b7899f5958ed0fe6acf521c46122b80f44",
+          "version": "0.5.6"
         }
       },
       {

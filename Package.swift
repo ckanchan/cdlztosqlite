@@ -7,7 +7,7 @@ let package = Package(
     name: "cdlztosqlite",
     dependencies: [
         .package(url: "https://github.com/stephencelis/SQLite.swift.git", from: "0.11.5"),
-        .package(url: "https://github.com/ckanchan/CDKSwiftOracc", .branch("master")),
+        .package(url: "https://github.com/ckanchan/CDKSwiftOracc", from: "0.5.6"),
         .package(url: "https://github.com/weichsel/zipfoundation", from: "0.9.6")
         
     ],
