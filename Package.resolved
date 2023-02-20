@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/ckanchan/CDKSwiftOracc",
         "state": {
           "branch": null,
-          "revision": "dd0a48b7899f5958ed0fe6acf521c46122b80f44",
-          "version": "0.5.6"
+          "revision": "816bf5e00055d4fb82059d25f34adb61aa2d2dba",
+          "version": "0.7.12"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
         "state": {
           "branch": null,
-          "revision": "210098546d59678f720e4ef67f8b562acfebbdb0",
-          "version": "0.11.5"
+          "revision": "0a9893ec030501a3956bee572d6b4fdd3ae158a1",
+          "version": "0.12.2"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/weichsel/zipfoundation",
         "state": {
           "branch": null,
-          "revision": "b5c53bef2deb7b20659b03b1223f0942599e5c41",
-          "version": "0.9.6"
+          "revision": "edbeaa39b426e54702194b0a601342322f01e400",
+          "version": "0.9.9"
         }
       }
     ]

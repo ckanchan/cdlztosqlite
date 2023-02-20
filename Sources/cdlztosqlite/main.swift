@@ -92,6 +92,14 @@ func main() -> Bool {
         }
     }
     
+    do {
+        try database.run(OraccSQLDB.texts.createIndex(OraccSQLDB.ancientAuthor))
+        try database.run(OraccSQLDB.texts.createIndex(OraccSQLDB.displayName))
+        try database.run(OraccSQLDB.texts.createIndex(OraccSQLDB.textid, unique: true))
+        try database.run(OraccSQLDB.texts.createIndex(OraccSQLDB.title))
+    } catch {
+        print(error.localizedDescription)
+    }
     return true
 }
 
@@ -121,9 +129,15 @@ extension Connection {
             try autoreleasepool {
                 var textData = Data()
                 _ = try archive.extract(textEntry){textData.append($0)}
-                guard let text = try? decoder.decode(OraccTextEdition.self, from: textData) else {return}
+                let text: OraccTextEdition
+                do {
+                    text = try decoder.decode(OraccTextEdition.self, from: textData)
+                } catch {
+                    print(error.localizedDescription)
+                    return
+                }
                 let container = TextEditionStringContainer(text)
-                let archiver = NSKeyedArchiver()
+                let archiver = NSKeyedArchiver(requiringSecureCoding: false)
                 container.encode(with: archiver)
                 let data = archiver.encodedData
                 
@@ -147,6 +161,10 @@ extension Connection {
                     OraccSQLDB.publicationHistory <- entry.publicationHistory,
                     OraccSQLDB.notes <- entry.notes,
                     OraccSQLDB.credits <- entry.credits,
+                    
+                    OraccSQLDB.pleiadesID <- entry.pleiadesID,
+                    OraccSQLDB.pleiadesCoordinateX <- entry.pleiadesCoordinate?.0,
+                    OraccSQLDB.pleiadesCoordinateY <- entry.pleiadesCoordinate?.1,
                     
                     OraccSQLDB.textStrings <- data
                     
