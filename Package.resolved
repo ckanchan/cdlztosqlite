@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "CDKSwiftOracc",
-        "repositoryURL": "https://github.com/ckanchan/CDKSwiftOracc",
-        "state": {
-          "branch": null,
-          "revision": "816bf5e00055d4fb82059d25f34adb61aa2d2dba",
-          "version": "0.7.12"
-        }
-      },
-      {
-        "package": "SQLite.swift",
-        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
-        "state": {
-          "branch": null,
-          "revision": "0a9893ec030501a3956bee572d6b4fdd3ae158a1",
-          "version": "0.12.2"
-        }
-      },
-      {
-        "package": "ZIPFoundation",
-        "repositoryURL": "https://github.com/weichsel/zipfoundation",
-        "state": {
-          "branch": null,
-          "revision": "edbeaa39b426e54702194b0a601342322f01e400",
-          "version": "0.9.9"
-        }
+  "pins" : [
+    {
+      "identity" : "cdkswiftoracc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ckanchan/CDKSwiftOracc",
+      "state" : {
+        "revision" : "93f3acc0f2872301e6bb736d9302084dd792cdd3",
+        "version" : "0.8.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "sqlite.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephencelis/SQLite.swift.git",
+      "state" : {
+        "revision" : "7a2e3cd27de56f6d396e84f63beefd0267b55ccb",
+        "version" : "0.14.1"
+      }
+    },
+    {
+      "identity" : "zipfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/weichsel/zipfoundation",
+      "state" : {
+        "revision" : "edbeaa39b426e54702194b0a601342322f01e400",
+        "version" : "0.9.9"
+      }
+    }
+  ],
+  "version" : 2
 }

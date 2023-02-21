@@ -1,7 +1,7 @@
 //
 //  Main.swift
 //  cdlztosqlite: generates a SQLite store from Oracc CDL ZIP archives
-//  Copyright (C) 2018 Chaitanya Kanchan
+//  Copyright (C) 2023 Chaitanya Kanchan
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -113,6 +113,8 @@ extension Connection {
         let sortedEntries = catalogue.members.values.sorted {
             $0.displayName < $1.displayName
         }
+        
+        let encoder = JSONEncoder()
      
         let count = sortedEntries.count
         var counter = 0
@@ -130,17 +132,16 @@ extension Connection {
                 var textData = Data()
                 _ = try archive.extract(textEntry){textData.append($0)}
                 let text: OraccTextEdition
+                let data: Data
                 do {
                     text = try decoder.decode(OraccTextEdition.self, from: textData)
+                    let container = TextEditionAttributedStringContainer(text)
+                    data = try encoder.encode(container)
                 } catch {
                     print(error.localizedDescription)
                     return
                 }
-                let container = TextEditionStringContainer(text)
-                let archiver = NSKeyedArchiver(requiringSecureCoding: false)
-                container.encode(with: archiver)
-                let data = archiver.encodedData
-                
+
                 try self.run(OraccSQLDB.texts.insert(
                     OraccSQLDB.textid <- entry.id.description,
                     OraccSQLDB.project <- entry.project,
