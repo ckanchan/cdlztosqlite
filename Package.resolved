@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ckanchan/CDKSwiftOracc",
       "state" : {
-        "revision" : "93f3acc0f2872301e6bb736d9302084dd792cdd3",
-        "version" : "0.8.0"
+        "revision" : "9b0801cccd52d2510a9f81a5594249042480f0c9",
+        "version" : "0.9.1"
       }
     },
     {

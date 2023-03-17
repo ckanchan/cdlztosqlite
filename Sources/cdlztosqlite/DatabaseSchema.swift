@@ -1,7 +1,7 @@
 //
 //  DatabaseSchema.swift
 //  cdlztosqlite: generates a SQLite store from Oracc CDL ZIP archives
-//  Copyright (C) 2018 Chaitanya Kanchan
+//  Copyright (C) 2023 Chaitanya Kanchan
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ enum OraccSQLDB {
     static let pleiadesCoordinateX = Expression<Double?>("pleiades_coordinate_x")
     static let pleiadesCoordinateY = Expression<Double?>("pleiades_coordinate_y")
     
-    // A place to encode TextEditionStringContainer with NSCoding
+    // A place to encode TextEditionAttributedStringContainer with Codable
     static let textStrings = Expression<Data>("Text")
     
     
@@ -95,13 +95,3 @@ enum OraccSQLDB {
         }
     }
 }
-
-
- 
-
-
-
-
-
-
-

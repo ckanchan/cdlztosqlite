@@ -20,7 +20,7 @@ import Foundation
 import CDKSwiftOracc
 
 @available(macOS 12, *)
-public struct TextEditionAttributedStringContainer: Codable {
+public struct TextEditionAttributedStringContainer {
     let cuneiform: String
     let transliteration: AttributedString
     let normalisation: AttributedString
@@ -31,5 +31,15 @@ public struct TextEditionAttributedStringContainer: Codable {
         self.transliteration = edition.transliteratedAttributedString()
         self.normalisation = edition.normalisedAttributedString()
         self.translation = edition.scrapeTranslation() ?? edition.literalTranslation
+    }
+}
+
+extension TextEditionAttributedStringContainer: Codable {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(cuneiform, forKey: .cuneiform)
+        try container.encode(transliteration, forKey: .transliteration, configuration: CDLTextAttributes.self)
+        try container.encode(normalisation, forKey: .normalisation, configuration: CDLTextAttributes.self)
+        try container.encode(translation, forKey: .translation)
     }
 }
